@@ -1,0 +1,16 @@
+import sys
+
+def product(num):
+    prod=1
+    for i in num:
+        prod=prod*i
+    return prod
+
+s=input()
+ans=0
+n=product(s[:4])
+for i in [4:len(s)]:
+    n=n/s[i-4]
+    n=n*s[i]
+    ans=max(ans,n)
+print(ans)
